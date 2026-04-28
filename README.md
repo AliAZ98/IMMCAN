@@ -22,7 +22,7 @@ We also evaluate caption-only augmentation via back-translation and synonym subs
 
 ## Code Release
 
-**Code will be released on 1 April 2026.**
+**Code will be released on 1 May 2026.**
 
 This repository will be updated with the implementation, training details, and usage instructions on that date.
 
