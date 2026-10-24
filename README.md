@@ -20,9 +20,9 @@ token representations; idiom-to-multimodal conditioning then produces a
 per-candidate compatibility prediction. The repository also includes
 caption-only text baselines (ListNet and ordinal regression).
 
-The original paper discusses results on AdMIRe 1.0 and AdMIRe 2.0 zero-shot
-evaluation. **The evaluation and checkpoint mapping for all paper tables
-are not yet included**; see MISSING_COMPONENTS.md.
+The paper investigates AdMIRe 1.0 and AdMIRe 2.0 zero-shot evaluation.
+This release contains the core training variants and will be extended as
+additional checkpoints and evaluation scripts become available.
 
 ## Repository structure
 
@@ -37,7 +37,6 @@ src/immcan/
 tests/           - offline data/model/loss smoke tests
 data/            - dataset directory guide; no data committed
 weights/         - weights manifest, download links pending
-MISSING_COMPONENTS.md - remaining code/artifacts for reproducibility
 ~~~
 
 The original framework diagram and MIT license are preserved.
@@ -110,7 +109,7 @@ The text-only model consumes candidate captions, not the pixels themselves.
 For augmented training, pass each augmented TSV AND its matching original
 image root. The loader refuses mismatched lists.
 
-## Metrics and experimental cautions
+## Evaluation and checkpoints
 
 Training reports loss and top-1 image accuracy per five-candidate example.
 The candidate order follows the image1..image5 columns and does **not**
@@ -119,9 +118,9 @@ artifact found in the source scripts. The CLI saves best-by-loss and
 best-by-top1 fusion checkpoints to outputs/. These **are not necessarily
 binary-compatible with the legacy paper checkpoints**.
 
-Official NDCG, 2.0 cross-dataset evaluation, validation and paper-table
-replication scripts are still pending. No test-set numbers are claimed in
-this initial source release. See MISSING_COMPONENTS.md.
+The automated tests cover offline shapes, basic gradients, data integrity,
+and ranking losses. Full official benchmark reproduction requires the
+corresponding author-supplied checkpoints and evaluation scripts.
 
 ## Citation
 
